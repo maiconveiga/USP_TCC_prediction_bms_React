@@ -126,6 +126,7 @@ const styles = {
     padding: '20px',
     backgroundColor: '#f5f5f5',
     minHeight: '100vh',
+    width: '100%',
   },
   header: {
     color: '#444',
@@ -154,15 +155,14 @@ const styles = {
   },
   tableContainer: {
     marginTop: '20px',
-    width: '100%',
-    maxWidth: '1000px',
+    width: '100%',  // Define largura total da tela
     backgroundColor: '#fff',
     borderRadius: '10px',
     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
     overflowX: 'auto',
   },
   table: {
-    width: '100%',
+    width: '100%', // Ocupa toda a largura do contêiner
     borderCollapse: 'collapse',
   },
   tableCell: {
@@ -170,8 +170,8 @@ const styles = {
     textAlign: 'center',
     borderBottom: '1px solid #ddd',
     fontSize: '0.8rem',
-    whiteSpace: 'nowrap', // Evita quebra de linha
-    minWidth: '80px', // Ajusta a largura mínima para evitar colunas estreitas
+    whiteSpace: 'nowrap',
+    minWidth: '80px',
   },
   loading: {
     fontSize: '1.2rem',
@@ -182,5 +182,6 @@ const styles = {
     fontSize: '1.1rem',
   },
 };
+
 
 export default DadosApi;
