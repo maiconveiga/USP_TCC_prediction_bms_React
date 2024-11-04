@@ -4,7 +4,7 @@ import Conteudo from './components/conteudo';
 import './style.css';
 
 function App() {
-  const [forecastChiller, setForecastChiller] = useState<any[]>([]); // Define o tipo do array como any[]
+  const [forecastChiller, setForecastChiller] = useState<any[]>([]); // Especifica o tipo do array como any[]
 
   return (
     <div className="container">
