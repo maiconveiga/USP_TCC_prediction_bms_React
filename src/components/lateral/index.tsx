@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './style.css';
 
 interface LateralProps {
-  setForecastChiller: React.Dispatch<React.SetStateAction<any[]>>;
+  setForecastChiller: React.Dispatch<React.SetStateAction<any[]>>; // Define explicitamente o tipo de array
 }
+
 
 const Lateral: React.FC<LateralProps> = ({ setForecastChiller }) => {
   const [chiller, setChiller] = useState('');
