@@ -1,0 +1,67 @@
+/* Contêiner Principal */
+.content-container {
+  display: flex;
+  flex-direction: column; /* Organiza os gráficos em uma coluna */
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  gap: 30px; /* Espaçamento entre os gráficos */
+  width: 100%; /* Ocupa toda a largura da página */
+}
+
+/* Contêiner para o Gráfico */
+.chart-wrapper {
+  width: 80%; /* Expande o gráfico para 100% da largura do contêiner */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Ajuste para Dispositivos Menores */
+@media (max-width: 768px) {
+  .content-container {
+    margin-left: 0;
+  }
+  .chart-wrapper {
+    width: 100%; /* Mantém 100% da largura em dispositivos menores */
+  }
+}
+
+.sidebar {
+  width: 100%;
+  position: relative;
+  height: auto;
+  margin-bottom: 20px; /* Espaço entre a sidebar e o conteúdo em telas pequenas */
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    width: 60px;
+    height: 100vh;
+  }
+
+  .sidebar:hover {
+    width: 250px;
+  }
+}
+
+.content-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .chart-wrapper {
+    width: 80%;
+  }
+}
