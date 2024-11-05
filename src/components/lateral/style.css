@@ -4,7 +4,7 @@
   position: fixed; /* Torna o menu lateral fixo */
   top: 0;
   left: 0;
-  width: 60px; /* Largura encolhida */
+  width: 30px; /* Largura encolhida */
   height: 100vh;
   background-color: #2c3e50;
   color: #ffffff;
@@ -20,7 +20,8 @@
 }
 
 .sidebar.expanded {
-  width: 250px; /* Largura expandida ao clicar */
+  width: 180px; /* Largura expandida ao clicar */
+  background-color: #3f5871;
 }
 
 .menu-button {
@@ -45,7 +46,7 @@
 }
 
 .sidebar h1 {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 10px;
 }
 

@@ -11,22 +11,25 @@ const Lateral: React.FC<LateralProps> = ({ setForecastChiller }) => {
   const [valor, setValor] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleMouseEnter = () => setIsExpanded(true);
+  const handleMouseLeave = () => setIsExpanded(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     const data = {
       ur_temp_saida: parseFloat(valor),
-      chiller: parseInt(chiller, 10),
+      chiller: parseInt(chiller, 10)
     };
 
     try {
       const response = await fetch('https://02-prediction-bms-fastapi.fly.dev/forecast/chiller', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       });
 
       if (!response.ok) {
@@ -42,11 +45,13 @@ const Lateral: React.FC<LateralProps> = ({ setForecastChiller }) => {
     }
   };
 
-  const toggleMenu = () => setIsExpanded(!isExpanded);
-
   return (
-    <aside className={`sidebar ${isExpanded ? 'expanded' : ''}`}>
-      <button className="menu-button" onClick={toggleMenu}>
+    <aside
+      className={`sidebar ${isExpanded ? 'expanded' : ''}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button className="menu-button" onClick={() => setIsExpanded(!isExpanded)}>
         ☰
       </button>
       {isExpanded && (
@@ -62,9 +67,7 @@ const Lateral: React.FC<LateralProps> = ({ setForecastChiller }) => {
                 onChange={(e) => setChiller(e.target.value)}
                 required
               >
-                <option value="" disabled>
-                  Escolha uma opção
-                </option>
+                <option value="" disabled>Escolha uma opção</option>
                 <option value="1">Chiller 1</option>
                 <option value="2">Chiller 2</option>
               </select>
@@ -86,9 +89,7 @@ const Lateral: React.FC<LateralProps> = ({ setForecastChiller }) => {
               />
             </div>
 
-            <button type="submit" disabled={isLoading}>
-              Enviar
-            </button>
+            <button type="submit" disabled={isLoading}>Enviar</button>
             {isLoading && <div className="loading"></div>}
           </form>
         </div>
