@@ -4,12 +4,12 @@ import Conteudo from './components/conteudo';
 import './style.css';
 
 function App() {
-  const [forecastChiller, setForecastChiller] = useState<any[]>([]); // Especifica o tipo do array como any[]
+  const [forecastChiller, setForecastChiller] = useState<any[]>([]);
 
   return (
     <div className="container">
       <Lateral setForecastChiller={setForecastChiller} />
-      {forecastChiller.length > 0 && <Conteudo forecastChiller={forecastChiller} />}
+      <Conteudo forecastChiller={forecastChiller} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+https://usp-tcc-prediction-bms-react-dvvz02fx3-maiconveigas-projects.vercel.app/
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

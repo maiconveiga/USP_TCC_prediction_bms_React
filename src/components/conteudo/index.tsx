@@ -97,14 +97,22 @@ const Conteudo: React.FC<ConteudoProps> = ({ forecastChiller }) => {
 
   return (
     <div className="content-container">
-      {renderCorrenteVagLigadosChart()} {/* Gráfico combinado para Corrente, VAG e Ligados */}
-      {renderChart('delta_ac', 'Delta AC', '#8a2be2')}
-      {renderChart('tr', 'TR', '#ff6347')}
-      {renderChart('kwh', 'KWh', '#4682b4')}
-      {renderChart('torre', 'Frequência das torres (Hz)', '#20b2aa')}
-      {renderChart('temperatura', 'Temperatura (°C)', '#32cd32')}
-      {renderChart('pressao', 'Pressão (mbar)', '#ff4500')}
-      {renderChart('umidade', 'Umidade (%)', '#6495ed')}
+      {forecastChiller.length === 0 ? (
+        <div className="empty-message">
+          Acesse o menu lateral para parametrização.
+        </div>
+      ) : (
+        <>
+          {renderCorrenteVagLigadosChart()} {/* Gráfico combinado para Corrente, VAG e Ligados */}
+          {renderChart('delta_ac', 'Delta AC', '#8a2be2')}
+          {renderChart('tr', 'TR', '#ff6347')}
+          {renderChart('kwh', 'KWh', '#4682b4')}
+          {renderChart('torre', 'Frequência das torres (Hz)', '#20b2aa')}
+          {renderChart('temperatura', 'Temperatura (°C)', '#32cd32')}
+          {renderChart('pressao', 'Pressão (mbar)', '#ff4500')}
+          {renderChart('umidade', 'Umidade (%)', '#6495ed')}
+        </>
+      )}
     </div>
   );
 };

@@ -1,19 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-
 .container {
   display: flex;
-  flex-direction: column; /* Padrão para mobile */
+  min-height: 100vh;
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
 }
 
-@media (min-width: 768px) {
+.container.expanded {
+  margin-left: 250px;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
   .container {
-    flex-direction: row; /* Alteração para desktop */
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 60px; /* Ajuste para compensar o menu no topo */
+  }
+
+  .content-container {
+    padding-top: 10px;
   }
 }
